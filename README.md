@@ -12,7 +12,7 @@ The model ingests raw, transaction-level data and uses an unsupervised learning 
 
 The credit scoring process is executed in a single script (`score_wallets.py`) and follows a clear, multi-step architecture:
 
-![Architecture Flowchart](https://i.imgur.com/gKz5bS3.png)
+
 
 1.  **Data Loading & Preprocessing**: The script begins by loading the raw JSON transaction data. It unnests the nested `actionData` object into a flat DataFrame structure. Key numerical fields like `amount` and `assetPriceUSD` are converted to numeric types, and a final `amountUSD` is calculated. To prevent outliers from skewing the model, transaction values are capped at the 99th percentile.
 
